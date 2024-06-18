@@ -43,7 +43,12 @@ int main2()
 	// Суммирование через std::transform
 	std::cout
 		<< "Матрица с результатом суммы первой и второй матриц:\n";
-	std::transform(M1.cbegin(), M1.cend(), M2.cbegin(), std::back_inserter(M_Sum), [](const List_i::value_type& e1, const List_i::value_type& e2)
+	std::transform(
+		M1.cbegin(), 
+		M1.cend(), 
+		M2.cbegin(), 
+		std::back_inserter(M_Sum), 
+		[](const List_i::value_type& e1, const List_i::value_type& e2)
 		{
 			return e1 + e2;
 		});
