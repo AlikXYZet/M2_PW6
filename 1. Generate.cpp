@@ -1,23 +1,5 @@
 ﻿#include "PW.h"
 
-// Синоним списка для упрощения написания кода
-typedef std::list<float> List_f;
-
-// Функция вывода каждого элемента в консоль
-auto print = [](const List_f::value_type& elem)
-{
-	std::cout << elem << ' ';
-};
-
-// Переменная максимального значения дипазона (не включительно)
-int rMax = 1;
-
-// Функция рандомного заполнения списка целочисленными значениями в диапазоне [0; rMax)
-auto randomInt = []()
-{
-	return int(rand() % rMax);
-};
-
 
 
 int main1()
@@ -33,9 +15,7 @@ int main1()
 	std::generate_n(std::back_inserter(L1), 10, randomInt);
 
 	// Вывод данных
-	std::cout << "{ ";
-	std::for_each(L1.begin(), L1.end(), print);
-	std::cout << "}\n\n";
+	print_list<List_f>(L1);
 
 
 
@@ -47,9 +27,7 @@ int main1()
 	std::generate(L1.begin(), L1.end(), randomInt);
 
 	// Вывод данных
-	std::cout << "{ ";
-	std::for_each(L1.begin(), L1.end(), print);
-	std::cout << "}\n";
+	print_list<List_f>(L1);
 
 	return 0;
 }
