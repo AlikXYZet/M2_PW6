@@ -35,7 +35,7 @@ typedef std::list<int> List_i;
 template<class T>   // Шаблон
 // Органичение использования по типу:
 std::enable_if_t<is_container<T>>
-print_list(T& L)
+print(T& L)
 {
 	std::cout << "{ ";
 	std::for_each(L.begin(), L.end(), [](const T::value_type& elem)

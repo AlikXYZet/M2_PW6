@@ -15,7 +15,7 @@ int main1()
 	std::generate_n(std::back_inserter(L1), 10, randomInt);
 
 	// Вывод данных
-	print_list(L1);
+	print(L1);
 
 
 
@@ -27,7 +27,7 @@ int main1()
 	std::generate(L1.begin(), L1.end(), randomInt);
 
 	// Вывод данных
-	print_list(L1);
+	print(L1);
 
 	return 0;
 }

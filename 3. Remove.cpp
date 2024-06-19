@@ -21,7 +21,7 @@ int main3()
 	std::generate_n(std::back_inserter(LR), 10, randomInt);
 
 	// Вывод данных
-	print_list(LR);
+	print(LR);
 
 
 
@@ -35,7 +35,7 @@ int main3()
 		LR.end()); // до конца списка
 
 	// Вывод данных
-	print_list(LR);
+	print(LR);
 
 	return 0;
 }
