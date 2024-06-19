@@ -8,9 +8,22 @@
 
 #include <list>
 
-//#include <type_traits>
-// для std::enable_if_t не обязателен,
-// так как вызывается через другие файлы stl
+/*---   Шаблон на проверку типа : true, если "T" является контейнером   ---*/
+template<typename, typename = void>
+constexpr bool is_container = false;
+
+template<typename T>
+constexpr bool is_container<
+	T,
+	std::void_t<
+	decltype(std::declval<T>().begin()),
+	decltype(std::declval<T>().end()),
+	typename T::value_type
+	>
+> = true;
+//----------------------------------------------------------------------------------------------------
+
+
 
 /*---   Предварительная инициализация   ---*/
 
@@ -21,7 +34,7 @@ typedef std::list<int> List_i;
 // Функция вывода всех элементов в консоль
 template<class T>   // Шаблон
 // Органичение использования по типу:
-std::enable_if_t<std::is_same_v<T, List_f> || std::is_same_v<T, List_i>>
+std::enable_if_t<is_container<T>>
 print_list(T& L)
 {
 	std::cout << "{ ";
