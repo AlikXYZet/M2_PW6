@@ -18,7 +18,7 @@ int main2()
 	std::generate_n(std::back_inserter(M1), MatrixDimension, randomInt);
 
 	// Вывод данных
-	print_list<List_i>(M1);
+	print_list(M1);
 
 
 
@@ -33,7 +33,7 @@ int main2()
 	std::generate_n(std::back_inserter(M2), MatrixDimension, randomInt);
 
 	// Вывод данных
-	print_list<List_i>(M2);
+	print_list(M2);
 
 
 
@@ -54,7 +54,7 @@ int main2()
 		});
 
 	// Вывод данных
-	print_list<List_i>(M_Sum);
+	print_list(M_Sum);
 
 
 
